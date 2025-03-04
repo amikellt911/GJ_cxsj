@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="OrderItemTest" time="0.067" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.class.path" value="d:\gm\oneDrive\teaching\4.advprog\lab\lab02.encoding.OO\demo\Product\target\test-classes;d:\gm\oneDrive\teaching\4.advprog\lab\lab02.encoding.OO\demo\Product\target\classes;C:\Users\gm\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\gm\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\gm\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\gm\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\gm\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\gm\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.boot.library.path" value="D:\programinstall\jdk21\bin"/>
+    <property name="sun.java.command" value="C:\Users\gm\AppData\Local\Temp\surefire4272202469981705045\surefirebooter5597533778083148951.jar C:\Users\gm\AppData\Local\Temp\surefire4272202469981705045 2025-03-03T21-40-18_173-jvmRun1 surefire13086337759520454224tmp surefire_015287365337581540414tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="d:\gm\oneDrive\teaching\4.advprog\lab\lab02.encoding.OO\demo\Product\target\test-classes;d:\gm\oneDrive\teaching\4.advprog\lab\lab02.encoding.OO\demo\Product\target\classes;C:\Users\gm\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\gm\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\gm\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\gm\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\gm\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\gm\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\gm"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-01-21"/>
+    <property name="java.home" value="D:\programinstall\jdk21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="d:\gm\oneDrive\teaching\4.advprog\lab\lab02.encoding.OO\demo\Product"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\gm\AppData\Local\Temp\surefire4272202469981705045\surefirebooter5597533778083148951.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.6+8-LTS-188"/>
+    <property name="user.name" value="gm"/>
+    <property name="stdout.encoding" value="GBK"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\gm\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\gm\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.6"/>
+    <property name="user.dir" value="d:\gm\oneDrive\teaching\4.advprog\lab\lab02.encoding.OO\demo\Product"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="GBK"/>
+    <property name="java.library.path" value="D:\programinstall\jdk21\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Volta\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;d:\Program Files\Kubernetes\Minikube;C:\Program Files\dotnet\;D:\programinstall\ffmpeg-N-99880-g8fbcc546b8-win64-gpl-vulkan\bin;d:\Program Files\Graphviz\bin;D:\programinstall\VSCodium\bin;C:\Program Files\Calibre2\;D:\programinstall\Git\cmd;C:\Program Files\nu\bin\;C:\Program Files\usbipd-win\;C:\Users\gm\.pyenv\pyenv-win\bin;C:\Users\gm\.pyenv\pyenv-win\shims;C:\Users\gm\AppData\Local\Volta\bin;d:\Program Files (x86)\Elm\0.19.1\bin;D:\programinstall\v_windows\v\.bin;C:\Users\gm\.dotnet\tools;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet;C:\Program Files\Typora;D:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\ProgramData\DockerDesktop\version-bin;d:\Program Files\Kubernetes\Minikube;D:\programinstall\go1153\bin;D:\programinstall\ffmpeg-N-99880-g8fbcc546b8-win64-gpl-vulkan\bin;D:\programinstall\z3-4.8.9-x64-win\bin;D:\programinstall\Fiddler;D:\programinstall\graphv;D:\programinstall\bit_1.1.2;C:\Program Files\WindowsApps\Microsoft.WindowsTerminal_1.12.10982.0_x64__8wekyb3d8bbwe;D:\programinstall\red;C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_1.18.431.0_x64__8wekyb3d8bbwe;C:\Users\gm\.dotnet\tools;D:\programinstall\nasm-2.15.05-x86-64;D:\programinstall\Racket;C:\Program Files\Chez Scheme 9.5.8\bin\ta6nt;D:\programinstall\graphviz-2.44.1-win32\Graphviz\bin;C:\Users\gm\go\bin;D:\programinstall\dragonwell-17.0.2.0.2+8-GA\bin;D:\programinstall\bin;D:\programinstall\helix-25.01-x86_64-windows;D:\programinstall\lein\bin;C:\Users\gm\.dotnet\tools;D:\programinstall\nvim\bin;D:\programinstall\Livebook\rel\vendor\otp\bin;D:\programinstall\apache-maven-3.9.3\bin;D:\ghcup\bin;D:\programinstall\Cangjie-0.53.13-windows_x64\cangjie\tools\bin;D:\programinstall\Cangjie-0.53.13-windows_x64\cangjie\bin;D:\programinstall\gradle-8.12.1\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="GBK"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.6+8-LTS-188"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testComputePrice" classname="OrderItemTest" time="0.044"/>
+</testsuite>

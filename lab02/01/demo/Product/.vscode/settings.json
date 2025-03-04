@@ -1,0 +1,16 @@
+{
+    "marscode.chatLanguage": "cn",
+    "marscode.codeCompletionPro": {
+        "enableCodeCompletionPro": true
+    },
+    "marscode.enableInlineCommand": true,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
+}
+    },
+    "marscode.enableInlineCommand": true,
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
+}

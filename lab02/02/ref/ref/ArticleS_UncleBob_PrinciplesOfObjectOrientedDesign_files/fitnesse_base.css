@@ -1,0 +1,252 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0.7em; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: trebuchet ms, verdana, tahoma, arial, sans-serif; BACKGROUND-COLOR: white
+}
+A:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #2e2eb2
+}
+A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #606099
+}
+A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #8989d9; TEXT-DECORATION: none
+}
+A:active {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #ff8000
+}
+TABLE {
+	BORDER-RIGHT: #aaaaaa 0px solid; PADDING-RIGHT: 0px; BORDER-TOP: #aaaaaa 1px solid; PADDING-LEFT: 0px; FONT-SIZE: 0.9em; BACKGROUND: #eeeeee; PADDING-BOTTOM: 0px; MARGIN: 2px; BORDER-LEFT: #aaaaaa 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #aaaaaa 0px solid
+}
+TD {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #aaaaaa 0px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 1px; BORDER-LEFT: #aaaaaa 0px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #aaaaaa 1px solid
+}
+TH {
+	BORDER-RIGHT: #aaaaaa 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #aaaaaa 0px solid; PADDING-LEFT: 3px; PADDING-BOTTOM: 1px; BORDER-LEFT: #aaaaaa 0px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #aaaaaa 1px solid
+}
+H1 {
+	FONT-SIZE: 3em; MARGIN: 0.5em; FONT-VARIANT: small-caps
+}
+H2 {
+	FONT-SIZE: 2.2em; MARGIN: 0.5em; FONT-VARIANT: small-caps
+}
+H3 {
+	FONT-SIZE: 1.7em; MARGIN: 0.5em; FONT-VARIANT: small-caps
+}
+TEXTAREA {
+	WIDTH: 100%
+}
+PRE {
+	FONT-SIZE: 1.5em
+}
+IMG {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+DIV.sidebar {
+	BORDER-RIGHT: #ff8000 1px dotted; PADDING-RIGHT: 5px; PADDING-LEFT: 5px; LEFT: 0px; PADDING-BOTTOM: 5px; MARGIN: 0px; WIDTH: 95px; PADDING-TOP: 5px; POSITION: fixed; TOP: 0px; HEIGHT: 1000px
+}
+DIV.art_niche {
+	PADDING-RIGHT: 0px; BACKGROUND-POSITION: center 50%; PADDING-LEFT: 0px; LEFT: 0px; BACKGROUND-IMAGE: url(/files/images/FitNesseLogo.gif); PADDING-BOTTOM: 5px; MARGIN: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: #ff8000 1px solid; BACKGROUND-REPEAT: no-repeat; POSITION: relative; TOP: 0px; HEIGHT: 90px
+}
+DIV.actions {
+	PADDING-RIGHT: 0px; BORDER-TOP: white 3px solid; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DIV.mainbar {
+	LEFT: 110px; MARGIN: 0px; WIDTH: 87%; POSITION: absolute; TOP: 0px
+}
+DIV.header {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 0px; PADDING-TOP: 5px; BORDER-BOTTOM: #ff8000 1px solid; HEIGHT: 90px
+}
+DIV.main {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; MARGIN: 0px; PADDING-TOP: 5px
+}
+#execution-status {
+	RIGHT: 0px; MARGIN: 5px; WIDTH: 100px; POSITION: absolute; TOP: 0px; HEIGHT: 90px; TEXT-ALIGN: center
+}
+#test-summary {
+	BORDER-RIGHT: black 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: black 1px solid; PADDING-LEFT: 5px; FONT-SIZE: 1.2em; PADDING-BOTTOM: 2px; MARGIN: 0px 0px 5px; BORDER-LEFT: black 1px solid; WIDTH: 99%; PADDING-TOP: 2px; BORDER-BOTTOM: black 1px solid; TOP: 105px
+}
+.actions A:link {
+	BORDER-RIGHT: white 0px solid; BORDER-TOP: white 0px solid; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 0.8em; MARGIN: 0px; BORDER-LEFT: white 0px solid; COLOR: #fff; TEXT-INDENT: 1em; LINE-HEIGHT: 2.2em; BORDER-BOTTOM: white 2px solid; BACKGROUND-COLOR: #2e2eb2; TEXT-DECORATION: none
+}
+.actions A:visited {
+	BORDER-RIGHT: white 0px solid; BORDER-TOP: white 0px solid; DISPLAY: block; FONT-WEIGHT: bold; FONT-SIZE: 0.8em; MARGIN: 0px; BORDER-LEFT: white 0px solid; COLOR: #fff; TEXT-INDENT: 1em; LINE-HEIGHT: 2.2em; BORDER-BOTTOM: white 2px solid; BACKGROUND-COLOR: #2e2eb2; TEXT-DECORATION: none
+}
+.actions A:hover {
+	COLOR: #ff8000; BACKGROUND-COLOR: #606099
+}
+.header A:link {
+	FONT-WEIGHT: bold
+}
+.note {
+	FONT-SIZE: 0.75em; COLOR: #999999
+}
+.page_title {
+	FONT-SIZE: 3em
+}
+SPAN.page_title {
+	text-shadow: 0px 0px 4px #2E2EB2
+}
+.page_type {
+	FONT-SIZE: 1.7em; FONT-VARIANT: small-caps
+}
+.caps {
+	FONT-SIZE: 1.3em; FONT-VARIANT: small-caps
+}
+.resultsHeader {
+	FONT-SIZE: 1.3em; FONT-VARIANT: small-caps
+}
+.resultsHeader {
+	BACKGROUND-COLOR: #efefef
+}
+.resultsRow2 {
+	BACKGROUND-COLOR: #efefef
+}
+.resultsRow1 {
+	BACKGROUND-COLOR: #ffffff
+}
+.centered {
+	MARGIN: 5px; TEXT-ALIGN: center
+}
+.right {
+	FLOAT: right
+}
+.left {
+	FLOAT: left
+}
+.strike {
+	TEXT-DECORATION: line-through
+}
+.virtual {
+	BACKGROUND-POSITION: center top; BACKGROUND-IMAGE: url(/files/images/virtualPage.jpg); BACKGROUND-REPEAT: no-repeat
+}
+.imported {
+	BACKGROUND-POSITION: center top; BACKGROUND-IMAGE: url(/files/images/importedPage.jpg); BACKGROUND-REPEAT: no-repeat
+}
+.meta {
+	COLOR: #bf8660; FONT-STYLE: italic
+}
+.included {
+	BORDER-RIGHT: #909090 1px dotted; PADDING-RIGHT: 2px; BORDER-TOP: #909090 1px dotted; PADDING-LEFT: 2px; BACKGROUND: #f9f9f9; PADDING-BOTTOM: 2px; MARGIN: 5px 0px; BORDER-LEFT: #909090 1px dotted; PADDING-TOP: 2px; BORDER-BOTTOM: #909090 1px dotted
+}
+.setup {
+	BORDER-RIGHT: #909090 1px dotted; PADDING-RIGHT: 2px; BORDER-TOP: #909090 1px dotted; PADDING-LEFT: 2px; BACKGROUND: #f9f9f9; PADDING-BOTTOM: 2px; MARGIN: 5px 0px; BORDER-LEFT: #909090 1px dotted; PADDING-TOP: 2px; BORDER-BOTTOM: #909090 1px dotted
+}
+.teardown {
+	BORDER-RIGHT: #909090 1px dotted; PADDING-RIGHT: 2px; BORDER-TOP: #909090 1px dotted; PADDING-LEFT: 2px; BACKGROUND: #f9f9f9; PADDING-BOTTOM: 2px; MARGIN: 5px 0px; BORDER-LEFT: #909090 1px dotted; PADDING-TOP: 2px; BORDER-BOTTOM: #909090 1px dotted
+}
+.collapse_rim {
+	BORDER-RIGHT: #909090 1px dotted; PADDING-RIGHT: 2px; BORDER-TOP: #909090 1px dotted; PADDING-LEFT: 2px; BACKGROUND: #f9f9f9; PADDING-BOTTOM: 2px; MARGIN: 5px 0px; BORDER-LEFT: #909090 1px dotted; PADDING-TOP: 2px; BORDER-BOTTOM: #909090 1px dotted
+}
+.setup {
+	BORDER-LEFT-COLOR: #ff8000; BACKGROUND: #fffff0; BORDER-BOTTOM-COLOR: #ff8000; BORDER-TOP-COLOR: #ff8000; BORDER-RIGHT-COLOR: #ff8000
+}
+.teardown {
+	BORDER-LEFT-COLOR: #ff8000; BACKGROUND: #fffff0; BORDER-BOTTOM-COLOR: #ff8000; BORDER-TOP-COLOR: #ff8000; BORDER-RIGHT-COLOR: #ff8000
+}
+.included {
+	BORDER-LEFT-COLOR: #2e2eb2; BACKGROUND: #f9f9ff; BORDER-BOTTOM-COLOR: #2e2eb2; BORDER-TOP-COLOR: #2e2eb2; BORDER-RIGHT-COLOR: #2e2eb2
+}
+.collapse_rim {
+	BORDER-LEFT-COLOR: #bf8660; BORDER-BOTTOM-COLOR: #bf8660; BORDER-TOP-COLOR: #bf8660; BORDER-RIGHT-COLOR: #bf8660
+}
+.alternating_row_1 {
+	DISPLAY: block; WIDTH: 100%; HEIGHT: 1.5em
+}
+.alternating_row_2 {
+	DISPLAY: block; WIDTH: 100%; HEIGHT: 1.5em
+}
+.alternating_row_1 {
+	BACKGROUND-COLOR: #efefef
+}
+.alternating_block_1 {
+	BACKGROUND-COLOR: #efefef
+}
+.alternating_row_2 {
+	BACKGROUND-COLOR: #ffffff
+}
+.alternating_block_2 {
+	BACKGROUND-COLOR: #ffffff
+}
+.alternating_block_1 {
+	BORDER-RIGHT: #dfd4a7 1px solid; BORDER-TOP: #dfd4a7 1px solid; BORDER-LEFT: #dfd4a7 1px solid; BORDER-BOTTOM: #dfd4a7 1px solid
+}
+.alternating_block_2 {
+	BORDER-RIGHT: #dfd4a7 1px solid; BORDER-TOP: #dfd4a7 1px solid; BORDER-LEFT: #dfd4a7 1px solid; BORDER-BOTTOM: #dfd4a7 1px solid
+}
+DIV.collapsable {
+	DISPLAY: block; MARGIN: 0px 0px 0px 15px
+}
+.hidden {
+	DISPLAY: none
+}
+.toc1 UL {
+	PADDING-LEFT: 2em; COLOR: black; LIST-STYLE-TYPE: disc
+}
+.toc2 UL {
+	LIST-STYLE-TYPE: circle
+}
+.toc3 UL {
+	COLOR: gray; LIST-STYLE-TYPE: disc
+}
+.toc4 UL {
+	LIST-STYLE-TYPE: circle
+}
+.toc5 UL {
+	LIST-STYLE-TYPE: circle
+}
+.toc6 UL {
+	LIST-STYLE-TYPE: circle
+}
+DIV.edit_buttons {
+	
+}
+DIV.nav_break {
+	FONT-SIZE: 0.3em
+}
+DIV.merge_new {
+	FONT-SIZE: 1.4em; FLOAT: left; WIDTH: 49%
+}
+DIV.merge_old {
+	FONT-SIZE: 1.4em; FLOAT: right; WIDTH: 49%
+}
+.test_summary_link {
+	TEXT-ALIGN: right
+}
+.test_summary_results {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; TEXT-ALIGN: left
+}
+.suite_summary {
+	MARGIN: 5px auto; TEXT-ALIGN: center
+}
+.test_output_name {
+	MARGIN-TOP: 10px; FONT-SIZE: 1.5em; TEXT-INDENT: 1em; BACKGROUND-COLOR: #dfd4a7
+}
+TABLE.dirListing {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 1em; BACKGROUND: none transparent scroll repeat 0% 0%; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 0px; MARGIN: 2px; WIDTH: 99%; PADDING-TOP: 0px; BORDER-RIGHT-WIDTH: 0px
+}
+.dirListing TD {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; BORDER-RIGHT-WIDTH: 0px
+}
+.dirListing TH {
+	BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; BORDER-RIGHT-WIDTH: 0px
+}
+.pass {
+	BACKGROUND-COLOR: #aaffaa
+}
+.fail {
+	BACKGROUND-COLOR: #ffaaaa
+}
+.error {
+	BACKGROUND-COLOR: #ffffaa
+}
+.ignore {
+	BACKGROUND-COLOR: #cccccc
+}
+.fit_stacktrace {
+	FONT-SIZE: 0.7em
+}
+.fit_label {
+	COLOR: #c08080; FONT-STYLE: italic
+}
+.fit_grey {
+	COLOR: #808080
+}

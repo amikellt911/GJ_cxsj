@@ -1,0 +1,7 @@
+@import url( /files/css/fitnesse_base.css );
+DIV.sidebar {
+	DISPLAY: none
+}
+DIV.mainbar {
+	LEFT: 0px; WIDTH: 100%
+}

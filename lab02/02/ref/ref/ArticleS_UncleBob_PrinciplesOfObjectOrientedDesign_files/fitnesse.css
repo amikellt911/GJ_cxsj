@@ -1,0 +1,67 @@
+@import url( /files/css/fitnesse_base.css );
+BODY {
+	FONT-SIZE: 0.8em
+}
+A:link {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #618059
+}
+A:visited {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #806959
+}
+A:hover {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #598080; TEXT-DECORATION: none
+}
+A:active {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #60bfbf
+}
+DIV.sidebar {
+	BORDER-RIGHT: #618059 1px dotted
+}
+DIV.art_niche {
+	BACKGROUND-IMAGE: url(/files/images/butunclebobIcon.gif); BORDER-BOTTOM: #618059 1px solid
+}
+DIV.header {
+	BORDER-BOTTOM: #618059 1px solid
+}
+.actions A:link {
+	COLOR: #fff; BACKGROUND-COLOR: #72a372
+}
+.actions A:visited {
+	COLOR: #fff; BACKGROUND-COLOR: #72a372
+}
+SPAN.page_title {
+	text-shadow: 0px 0px 4px #72A372
+}
+.actions A:hover {
+	COLOR: #bf6060; BACKGROUND-COLOR: #60bf60
+}
+.note {
+	FONT-SIZE: 0.75em; COLOR: #999999
+}
+.included {
+	BORDER-RIGHT: #806159 1px dotted; BORDER-TOP: #806159 1px dotted; BACKGROUND: #eff0fb; BORDER-LEFT: #806159 1px dotted; BORDER-BOTTOM: #806159 1px dotted
+}
+.setup {
+	BORDER-RIGHT: #806159 1px dotted; BORDER-TOP: #806159 1px dotted; BACKGROUND: #eff0fb; BORDER-LEFT: #806159 1px dotted; BORDER-BOTTOM: #806159 1px dotted
+}
+.teardown {
+	BORDER-RIGHT: #806159 1px dotted; BORDER-TOP: #806159 1px dotted; BACKGROUND: #eff0fb; BORDER-LEFT: #806159 1px dotted; BORDER-BOTTOM: #806159 1px dotted
+}
+LI {
+	MARGIN: 5px
+}
+PRE {
+	BORDER-RIGHT: #596f80 1px dotted; PADDING-RIGHT: 3px; BORDER-TOP: #596f80 1px dotted; PADDING-LEFT: 3px; FONT-SIZE: 1.3em; BACKGROUND: #e6fadf; PADDING-BOTTOM: 3px; MARGIN: 3px; BORDER-LEFT: #596f80 1px dotted; PADDING-TOP: 3px; BORDER-BOTTOM: #596f80 1px dotted
+}
+H1 {
+	MARGIN: 2px
+}
+H2 {
+	MARGIN: 2px
+}
+H3 {
+	MARGIN: 2px
+}
+.centered {
+	MARGIN: 2px 5px
+}
