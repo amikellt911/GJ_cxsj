@@ -1,0 +1,4 @@
+
+https://refactoringguru.cn/design-patterns/catalog
+
+https://pl.cs.jhu.edu/oose/lectures/design-patterns.shtml

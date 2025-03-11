@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://pl.cs.jhu.edu/oose/lectures/design-patterns.shtml -->
+<html class=" global wide normal narrow"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"><style type="text/css">@-ms-viewport{width: device-width}</style><style type="text/css">html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}body{-webkit-text-size-adjust:none}</style><style type="text/css">*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}</style>
+  <title>Object-Oriented Software Engineering</title>
+  
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <!--[if lte IE 8]><script src="/oose/css/ie/html5shiv.js"></script><![endif]-->
+  <script src="./Object-Oriented Software Engineering_files/jquery.min.js.下载"></script>
+  <script src="./Object-Oriented Software Engineering_files/jquery.dropotron.min.js.下载"></script>
+  <style type="text/css">.\31 2u{width:100%}.\31 1u{width:91.6666666667%}.\31 0u{width:83.3333333333%}.\39 u{width:75%}.\38 u{width:66.6666666667%}.\37 u{width:58.3333333333%}.\36 u{width:50%}.\35 u{width:41.6666666667%}.\34 u{width:33.3333333333%}.\33 u{width:25%}.\32 u{width:16.6666666667%}.\31 u{width:8.3333333333%}.\-11u{margin-left:91.6666666667%}.\-10u{margin-left:83.3333333333%}.\-9u{margin-left:75%}.\-8u{margin-left:66.6666666667%}.\-7u{margin-left:58.3333333333%}.\-6u{margin-left:50%}.\-5u{margin-left:41.6666666667%}.\-4u{margin-left:33.3333333333%}.\-3u{margin-left:25%}.\-2u{margin-left:16.6666666667%}.\-1u{margin-left:8.3333333333%}</style><style type="text/css">.row>*{float:left}.row:after{content:'';display:block;clear:both;height:0}.row:first-child>*{padding-top:0!important}</style><link rel="stylesheet" type="text/css" href="./Object-Oriented Software Engineering_files/style.css"><link rel="stylesheet" type="text/css" href="./Object-Oriented Software Engineering_files/style-wide.css"><link rel="stylesheet" type="text/css" href="./Object-Oriented Software Engineering_files/style-normal.css"><link rel="stylesheet" type="text/css" href="./Object-Oriented Software Engineering_files/style-narrow.css"><style type="text/css">body{min-width:95%}.container{margin-left:auto;margin-right:auto;width:95%}.container.small{width:71.25%}.container.big{width:100%;max-width:118.75%;min-width:95%}</style><style type="text/css">.row>*{padding-left:25px}.row+.row>*{padding:25px 0 0 25px}.row{margin-left:-25px}.row.flush>*{padding-left:0}.row+.row.flush>*{padding:0}.row.flush{margin-left:0}.row.half>*{padding-left:12.5px}.row+.row.half>*{padding:12.5px 0 0 12.5px}.row.half{margin-left:-12.5px}.row.quarter>*{padding-left:6.25px}.row+.row.quarter>*{padding:6.25px 0 0 6.25px}.row.quarter{margin-left:-6.25px}.row.oneandhalf>*{padding-left:37.5px}.row+.row.oneandhalf>*{padding:37.5px 0 0 37.5px}.row.oneandhalf{margin-left:-37.5px}.row.double>*{padding-left:50px}.row+.row.double>*{padding:50px 0 0 50px}.row.double{margin-left:-50px}</style><style type="text/css">.not-global,.not-wide,.not-normal,.not-narrow{display:none!important}.only-narrower,.only-mobile{display:none!important}</style><script src="./Object-Oriented Software Engineering_files/skel.min.js.下载"></script>
+  <script src="./Object-Oriented Software Engineering_files/skel-layers.min.js.下载"></script>
+  <script src="./Object-Oriented Software Engineering_files/init.js.下载"></script>
+  <!-- Highlight.js -->
+  <script src="./Object-Oriented Software Engineering_files/highlight.pack.js.下载"></script>
+  <link rel="stylesheet" href="./Object-Oriented Software Engineering_files/hljs-default.css">
+  <script>hljs.initHighlightingOnLoad(); hljs.configure({languages: []})</script>
+  <noscript>
+   <link rel="stylesheet" href="/oose/css/skeloose.css" />
+   <link rel="stylesheet" href="/oose/css/styleoose.css" />
+  </noscript>
+  <!--[if lte IE 8]><link rel="stylesheet" href="/oose/css/ie/v8.css" /><![endif]-->
+ </head>
+ <body class="" style=""><div id="skel-layers-wrapper" style="position: relative; left: 0px; right: 0px; top: 0px; backface-visibility: hidden; transition: -webkit-transform 0.25s ease-in-out 0s;">
+
+  <!-- Header Wrapper -->
+   <div class="wrapper style1">
+   
+   <!-- Header -->
+    <div id="header">
+     <div class="container">
+       
+      <!-- Logo -->
+       <h1><a href="https://pl.cs.jhu.edu/oose/index.shtml" id="logo">OOSE</a></h1>
+      
+      <!-- Nav -->
+      <nav id="nav">
+
+
+<ul>
+  <li style="white-space: nowrap;"><a href="https://www.jhu-oose.com/">NEW VERSION</a></li>
+<li class="active" style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/index.shtml">Home</a></li>
+         <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
+          <a href="https://pl.cs.jhu.edu/oose/logistics.shtml">Logistics</a>
+          
+         <ul class="" style="user-select: none; display: none; position: absolute;">
+           <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/dateline.shtml" style="display: block;">Dateline</a></li>
+           <li style="white-space: nowrap;"><a href="https://gradescope.com/" style="display: block;">Gradescope</a></li>
+           <li style="white-space: nowrap;"><a href="https://piazza.com/class/jkjy7yzgor0eo" style="display: block;">Piazza</a></li>
+           <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/integrity.shtml" style="display: block;">Integrity</a></li>
+           <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/contact.shtml" style="display: block;">Contact Us</a></li>
+          </ul></li>
+<li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
+  <a href="https://pl.cs.jhu.edu/oose/index.shtml">Lectures</a>
+<ul class="" style="user-select: none; display: none; position: absolute;">
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/webjava.shtml" style="display: block;">RESTful Web</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/uml.shtml" style="display: block;">UML</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/git.shtml" style="display: block;">Git</a>
+</li><li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/requirements.shtml" style="display: block;">Requirements</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/javascript.shtml" style="display: block;">JavaScript</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/design.shtml" style="display: block;">Design</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/design-principles.shtml" style="display: block;">Design Principles</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/implement-test.shtml" style="display: block;">Implementation</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/refactoring.shtml" style="display: block;">Refactoring</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/code-idioms.shtml" style="display: block;">Code Idioms</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/design-patterns.shtml" style="display: block;">Design Patterns</a></li>
+</ul></li>
+<li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/projects/index.shtml">Projects</a>
+    <ul class="" style="user-select: none; display: none; position: absolute;">
+      <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/projects/iteration1.shtml" style="display: block;">Iteration 1</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration2.shtml" style="display: block;">Iteration 2</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration3.shtml" style="display: block;">Iteration 3</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration4.shtml" style="display: block;">Iteration 4</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration5.shtml" style="display: block;">Iteration 5</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration6.shtml" style="display: block;">Iteration 6</a></li>
+      <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/projects/presentations.shtml" style="display: block;">Presentations</a>
+
+    </li></ul></li>
+<li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap; opacity: 1;"><a href="https://pl.cs.jhu.edu/oose/lectures/dateline.shtml">Assignments</a>
+    <ul class="" style="user-select: none; display: none; position: absolute;">
+      <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/assignments/restful.shtml" style="display: block;">1:RESTful server</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/javascript.shtml" style="display: block;">2:JavaScript etc</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/design.shtml" style="display: block;">3:Design</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/design-principles.shtml" style="display: block;">4:Design Principles</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/refactoring.shtml" style="display: block;">5:Refactoring</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/design-patterns.shtml" style="display: block;">6:Design Patterns</a></li>
+    </ul></li>
+
+    <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/index.shtml">Resources</a>
+    
+      <ul class="" style="user-select: none; display: none; position: absolute;">
+      <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/resources/tools.shtml" style="display: block;">Tools</a>
+      </li><li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/resources/textbooks.shtml" style="display: block;">Books</a>
+      </li></ul></li>
+
+      </ul>
+
+      </nav>
+ 
+     </div>
+    </div>
+
+	 
+</div>
+    
+    <!-- Main -->
+      <div id="main" class="wrapper style4">
+
+        <!-- Content -->
+        <div id="content" class="container">
+<section>
+  <header class="major">
+
+<h2>Design Patterns</h2>
+  </header>
+  
+
+<h3>What Are Object-Oriented Design Patterns?</h3>
+<strong>Definition</strong> A pattern of fixed class
+structure (think UML class sub-diagram) and messaging
+that repeatedly pops up as a particularly elegant and useful programming idiom.  <p>
+</p><ul>
+  <li>The original source for object-oriented design patterns: <a href="https://catalyst.library.jhu.edu/catalog/bib_5717838">Gamma et al. Design Patterns
+       book</a> (click on link for JHU access), circa 1995. The authors are known as the "Gang of Four" ("Go4" below).
+</li><li> The <a href="https://catalyst.library.jhu.edu/catalog/bib_5712813"><em>Head First Design Patterns (HFDPs, pronounced "Heff Dupps")</em></a> (click for JHU access)
+textbook is a much better description/motivation of the patterns; we will use some of their examples below.
+</li><li>The <a href="https://refactoring.guru/design-patterns/catalog">Refactoring.guru design patterns pages</a> is a good on-line reference with additional examples.
+</li></ul>
+
+Design patterns are important
+<ul>
+  <li>They are "advanced" / "clever" code structurings that you may not find on your own.
+  </li><li>They are needed often enough -- for the average OOSE project we see at least 3-4 patterns being helpful in the design.
+</li></ul>
+Don't take the Gang of Four patterns as religion
+<ul>
+  <li>They are not hard and fast structures, each one is a theme you can apply variations to.
+  </li><li>There are other advanced design patterns beyond the ones we cover, but they tend to be more domain-specific.  DO keep an eye out for them in your own coding.
+  </li><li>Beyond Object-Oriented design patterns there are also patterns of good design for how frameworks are interfaced to and composed, and for non-coding aspects of design in about any context (the design pattern idea originally came from the field of architecture).
+</li></ul>
+
+
+<h3>Separation of concerns and design patterns</h3>
+<ul>  <li>A primary focus of good design is our well-known friend, <em>separation of concerns</em>
+    <ul>
+      <li>In good code, every class / method should have a distinct focus of responsibility</li>
+      <li>Separate each different concern into a different class or method.</li>
+    </ul>
+  </li><li>Many design patterns have as their goal an improved separation of concerns.</li>
+</ul>
+
+Common low-level techniques in the design patterns that help with separation of concerns
+<ul>
+  <li><em>Delegate</em> (forward) some messages to other objects
+  </li><li>Replace switch with inheritance and dynamic dispatch (we saw this in refactoring)
+  </li><li><em>Reify</em> an action/method (a verb) as an object (a noun) to manipulate it in new ways.
+</li></ul>
+
+
+<h2>The Patterns</h2>
+<p>
+We are going to start with the patterns that focus more on separation of concerns since that is a major theme.
+</p><h3>Observer</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/observer">Refactoring.guru's Observer</a>
+</p><p>
+  
+<strong>Go4 description:</strong> Define a one-to-many dependency between objects so that when one
+	object changes state, all its dependents are notified and updated
+	automatically.
+</p><p>
+<a href="https://pl.cs.jhu.edu/oose/lectures/images/Observer-Java.PDF"><strong>Diagram for Java's built-in Observer Class</strong></a> - Java comes with a template to fill out if you want to use this pattern.
+</p><p>
+
+</p><ul>
+  <li>This is a classic pattern pre-dating the Go4, when it was called "publish/subscribe" ("pub/sub").
+    The <em>publisher</em> is the object and the observers are its <em>subscribers</em>.
+  </li><li>The key advantage of observer is it <em>decouples</em>  subjects
+  and observers, they are only loosely acquainted.  More <em>separation of concerns</em>.
+  </li><li>Subject can read/write its fields; Observer is a part that only
+  needs to <em>read</em> the subject fields so can be decoupled into a
+  separate class.
+  </li><li>Subject in particular does not need to concern itself with when
+  and what particular fields the observer needs - the observer has a
+  reference to the subject so can figure all that out on its own.
+  </li><li>Internally how it works: <a href="https://pl.cs.jhu.edu/oose/lectures/images/Observer-Java-Code.PDF">see the code</a>.
+  </li><li>Observer of some sort is found in nearly all GUI libraries
+      <ul>
+	<li>the model is the underlying logic (the weather data in the above)
+        </li><li>various views register as observer so they can update when data changes
+          </li><li>A particularly common method to use Observer in views is MVC, see below.
+      </li></ul>
+</li></ul>
+
+
+<h3>Decorator</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/decorator">Refactoring.guru's Decorator</a>
+</p><p>
+
+<strong>Go4 description:</strong> Attach additional responsibilities to an object
+	dynamically. Decorators provide a flexible alternative to
+	subclassing for extending functionality.
+<br><strong><a href="https://pl.cs.jhu.edu/oose/lectures/images/Decorator.PDF">Generic diagram</a></strong>
+</p><ul>
+  <li> <a href="https://pl.cs.jhu.edu/oose/lectures/images/Decorator-Java-IO.PDF"><strong>Java IO
+	Example</strong></a> - Java IO makes excellent use of decorators
+  </li><li><a href="https://pl.cs.jhu.edu/oose/lectures/images/Decorator-Java-Code.PDF">Here is a code example</a> to make clear how the decorator "decorates"
+  </li><li>Notice in particular how the decorator method X calls the same method X on the "decoratee" and then does its thing with the result (or, does nothing extra); this is one of many examples of patterns using <em>delegation</em> for better separation of concerns.
+    </li><li>(Also note that the contract here requires calls to the superclass method as part of the contract; this is an instance of the <a href="https://en.wikipedia.org/wiki/Call_super">Call super</a> anti-pattern but there is no nice alternative here.)
+</li></ul>
+
+<h4>Design Principle: The Open-Closed Principle</h4>
+This principle is illustrated well by the decorator pattern; we
+covered it in the <a href="https://pl.cs.jhu.edu/oose/lectures/design-principles.shtml#ocp">design principles</a> lecture
+but will revisit it now.
+<ul>
+  <li>Decorator allows functionality to be added which are
+      <em>extensions</em> which allowed the original codebase <em>to
+	not change</em> the original code </li>
+  <li>In particular notice how we are not inheriting to add functionality, the decorator is a new object forwarding messages to the decoratee</li>
+  <li>I.e. the original code is "open to extension, closed to
+    modification" -- OCP!</li>
+</ul>
+
+
+<h3>Command</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/command">Refactoring.guru's Command</a>
+</p><p>
+
+<strong>Go4 description:</strong> Encapsulate a request on an object, thereby letting one parameterise
+	clients with different requests, queue or log requests, and
+	support undoable operations.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/images/Command.PDF"><strong>Generic diagram</strong></a>
+
+</p><ul>
+  <li>Command is for the case that there are many requests for some action which may themselves need to be controlled in some way (prioritize/delay/undo/etc).
+  </li><li>Book example: <a href="https://pl.cs.jhu.edu/oose/lectures/images/CommandRemote.pdf">remote control commands</a> for a remote which can control lights, garage door, ceiling fan, etc.
+  </li><li>In this diagram, 
+      <ul>
+	<li>
+      <code>RemoteLoader</code> holds the set of commands, 
+  </li><li>the <code>LightOnCommand</code> (plus the not shown <code>FanOnCommand</code> etc etc etc) contains the code to perform the command via its <code>execute()</code>
+      method, and
+  </li><li> <code>Command</code> is an abstract superclass so we can generically support a multitude
+      of concrete commands.
+      </li></ul>
+  </li><li>Since these commands are now objects we can put them on a log
+  queue, make macro commands (a <code>List</code> of commands can be a command), implement an <code>undo()</code> action,
+  add <code>percentDone()</code> on long-running commands to gauge progress, etc.
+  </li><li>In addition, the command structure is more <em>decoupled</em> from the actual operations: the remote doesn't need to know about fans or lights.
+  </li><li>Command is an instance of the <em>reification</em> meta-pattern: turn an action/method  (a verb) a class (a noun).
+</li></ul>
+
+<h3>Adapter</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/adapter">Refactoring.guru's Adapter</a>
+</p><p>
+
+
+<strong>Go4 description:</strong> Convert the interface of a class into another interface clients
+	expect. Adapter lets classes work together that couldn't otherwise
+	because of incompatible interfaces.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/images/Adapter.PDF"><strong>Generic diagram</strong></a>
+</p><p>
+</p><ul>
+  <li><strong>Adapter</strong> is needed when there is an interface,
+      but it isn't quite what you need and either you can't change it
+	or if you changed it to the way you wanted it would mess up
+	something else.
+      <ul>
+	<li>It may have method names slightly different;
+	</li><li>It may be missing one of the methods and so some default
+	    value must be popped in for that method
+	</li><li>Some translation of the data may be needed, e.g. your
+	    interface expects rectangular coordinates for a point and
+	    the object you want to use expects polar coordinates.
+	</li><li>You may want to add some extra functionality in the
+	<code>Decorator</code> spirit, e.g. log requests.
+      </li></ul>
+  </li><li>Then, the solution in the above case is to create a new
+      intermediate object, the <em>adapter</em>, which serves to
+      adapt the interface for that object.<ul>
+      <li>and, the bad non-solution is not to make a new object solely reponsible for conversion but to inline the conversion code</li>
+      <li>This non-solution doesn't factor the responsibilities as much as Adapter can - <em>maximally</em> separate concerns/responsibilities</li>
+      <li>The new Adaptor object has one and only one responsibility: data conversion - focused responsibility is good!!
+	</li></ul>
+  </li><li>The <a href="https://pl.cs.jhu.edu/oose/lectures/images/Adapter-Example.PDF">book has an example</a> of how the old Java
+	<code>Enumeration</code> class can be adapted to work like the
+	new <code>Iterator</code> class.
+</li></ul>
+
+
+<h3>Façade</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/facade">Refactoring.guru's Facade</a>
+</p><p>
+
+
+<strong>Go4 description:</strong> Provide a unified interface to a set of interfaces in a
+	subsystem. Façade defines a higher-level interface that makes
+	the subsystem easier to use.
+
+</p><ul>
+  <li>A facade turns a big bunch of objects into a <em>component</em>, by
+	putting the interface of interaction with those objects on one
+    object, the <em>façade</em>.</li>
+  <li>The high-level interface abstracts away details that users of the objects don't need to be concerned with - yet another example of decoupling / separation of concerns</li>
+  <li>Facade objects don't do significant work, they just delegate (forward
+    messages)  to other objects. </li>
+  <li>Facades can also combine some adapting a la the Adapter pattern, such as supplying some of the
+      arguments to lower-level methods, invoking multiple methods, etc.
+  </li><li><strong>Example:</strong> Real-world home theater system example from book
+      <ul>
+	<li><a href="https://pl.cs.jhu.edu/oose/lectures/images/Facade-Theater-Before.PDF">Before</a>:
+  user needs to interact with all the individual components
+	</li><li><a href="https://pl.cs.jhu.edu/oose/lectures/images/Facade-Theater.PDF">After:</a> the
+	<code>HomeTheaterFacade</code> provides the complete interface to
+	all the classes to outsiders, <em>including</em> regular ways to interact with them that may be a complex series of events.
+	</li><li><a href="https://pl.cs.jhu.edu/oose/lectures/images/Facade-Theater-Code.PDF">code examples</a> of how methods on facade can do a lot more than just forward messages to the underlying object(s)
+	  <br>— the methods on the facade are at a higher level of abstraction.
+      </li></ul>
+</li></ul>
+
+<h4>Design Principle: The Principle of Least Knowledge</h4>
+<blockquote>Talk only to your immediate friends</blockquote>
+<ul>
+  <li>Facade is a great pattern primarily because
+of how effectively it implements this principle.
+  </li><li>The "users" of the large collection of objects under the facade
+      only need to talk to the facade object (their immediate friend)
+      and not all of the other objects.
+    </li><li>This is also yet another instance of separation of concerns, the user can avoid having to understand the low-level details of the pieces.
+</li></ul>
+
+<h4>Aside: Components</h4>
+"Component" is a word that gets abused by computer scientists; its actually a fairly simple idea.
+<blockquote>A <em>component</em> is a "big object" -- it is a dynamic entity with an interface like an object (methods), but is more heavyweight: it may come with metadata, there may be multiple objects involved behind the scenes, it may be remote with an interface for networked interaction, etc.</blockquote>
+
+<strong>Examples</strong>:  façades, Microsoft COM objects, RESTful web services, plugin modules, etc.
+<p>
+  
+</p><h3>Factories</h3>
+
+<ul>
+  <li>Factories are methods creating objects rather than directly invoking <code>new</code>.
+  </li><li>Advantage of using interfaces or superclasses
+      as abstractions breaks down when you <code>new</code>: it requires you to give the concrete class you are making, its impossible for <code>new</code> to be parametric. 
+  </li><li>
+... Factories to the rescue: they allow factory-calling code to
+      create objects by invoking them instead of grubbing around with <code>new</code>.<br>
+<pre>Window w = aWindowFactory.makeWindow()</pre> can return
+      a say <code>LightWindow</code> or a
+      <code>DarkWindow</code>, both of which are
+      <code>Window</code>s, and the class with the above code need not be concerned
+      with which it got back.  Impossible to do with <code>new</code>.
+</li></ul>
+
+  <li>A <em>Simple Factory</em> is any method that makes objects of
+      more than one possible class.  <a href="https://pl.cs.jhu.edu/oose/lectures/images/Factory-Simple.PDF">Book example with pizzas.</a>
+  </li><li>Simple factory is not considered an official design pattern, but is still very useful -- no need to stretch your simple factory into a complex one if its not needed.
+  </li><li>There are two official design patterns, Factory Method and
+      Abstract Factory, which can improve on using just a
+      simple factory.
+
+
+<h4>Factory Method</h4>
+<p>
+  <a href="https://refactoring.guru/design-patterns/factory-method">Refactoring.guru's Factory Method</a>
+</p><p>
+A factory method is a generalization of a simple factory:
+</p><ul>
+  <li>There is a superclass or interface which has the factory or
+      method declared
+  </li><li>Subclasses or implementers specialize this factory to create the
+      kinds of objects they need
+  </li><li>Advantage over simple factory above is no switch statement is needed when the factory
+    decides what kind of object to make: the choice of subclass already made the decision.
+    <br> -- recall switch is a smell, and we are removing a switch
+</li></ul><p>
+<strong>Go4 description:</strong> Define an interface for creating an object, but let subclasses decide
+	which class to instantiate. Factory Method lets a class defer
+	instantiation to subclasses.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/images/Factory-Method.PDF"><strong>Generic diagram</strong></a>
+</p><ul>
+  <li><a href="https://pl.cs.jhu.edu/oose/lectures/images/Factory-Method-Pizza.PDF">Pizza example in HFDPs</a> and the <a href="https://pl.cs.jhu.edu/oose/lectures/images/Factory-Method-Pizza-Code.PDF">code for it</a>.
+</li></ul>
+
+<h4>Design Principle: The Dependency Inversion Principle</h4>
+"High level code should not depend directly on low level code; instead, both should depend on an abstractions"
+<ul>
+  <li>In other words, put an interface in the middle!  Separate those concerns!
+  </li><li>We skipped this principle in the Design Principles lecture since Factory Method is a really good iillustration.</li>
+  <li>The initial pizza-making code without a factory required the top-level
+      <code>PizzaStore</code> class to itself choose the kind of pizza: <a href="https://pl.cs.jhu.edu/oose/lectures/images/DIP-Bad.PDF">see picture from book</a>.</li>
+  <li>Arrows in the above (read as "dependent-on") show high-level
+      code directly dependent on details of low-level code (it needs
+    their names to create them via <code>new</code>)</li>
+  <li><a href="https://pl.cs.jhu.edu/oose/lectures/images/DIP-Good.PDF">This picture</a> shows how the
+    depenencies get inverted whan a factory method is used, meaning PizzaStore only deals with Pizza abstraction, not all the low-level details.</li>
+  <li>The dependencies were inverted - D-I-P!</li>
+</ul>
+
+
+<h4>Abstract Factory</h4>
+<p>
+  <a href="https://refactoring.guru/design-patterns/abstract-factory">Refactoring.guru's Abstract Factory</a>
+</p><p>
+
+
+<strong>Go4 description:</strong> 
+Provide an interface for creating families of related or dependent
+	objects without specifying their concrete classes.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/images/Abstract-Factory.PDF"><strong>Generic diagram</strong></a>
+</p><ul>
+  <li><a href="https://pl.cs.jhu.edu/oose/lectures/images/Factory-Abstract-Pizza.PDF">Abstract Factories
+      for Pizzas</a> and some <a href="https://pl.cs.jhu.edu/oose/lectures/images/Factory-Abstract-Pizza-Code.PDF">Factory code</a>
+  </li><li>The key difference here compared to Factory Method is the
+      <em>FAMILY</em> of related classes getting created, and the factory is a separate <em>CLASS</em>.
+  </li><li>It probably doesn't deserve to be a design pattern, its just one of many variations possible on factories.
+
+</li></ul>
+
+
+
+<h3>Proxy</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/proxy">Refactoring.guru's Proxy</a>
+</p><p>
+
+<strong>Go4 description:</strong> Provide a surrogate or placeholder for another object to control
+	access to it.
+</p><p>
+
+</p><ul>
+  <li><strong>Proxy</strong> is a special case of delegation where
+	nearly all methods of one object delegate to the same method in another object.
+  </li><li><a href="https://pl.cs.jhu.edu/oose/lectures/images/ProxyVirtual.PDF">Virtual Proxy</a>: maybe actual object hasn't been created or loaded
+    yet
+    <br>-- for example when browsing thumbnails you don't need the full Picture object, a PictureProxy in the middle may only have the thumbnail loaded and can itself load the Picture into memory if needed)
+  </li><li>Proxies can be used for access control: e.g. <code>ReadOnlyGoober</code>
+      could be a proxy class for a <code>Goober</code> which does not
+      forward setter messages to <code>Goober</code>, but forwards all
+      others.  
+  </li><li>Java RMI uses <a href="https://pl.cs.jhu.edu/oose/lectures/images/ProxyRemote.PDF">remote
+      proxies</a> for remote objects, and Hibernate uses proxies for
+      database-stored objects.
+</li></ul>
+<p>
+
+</p><h3>Template Method</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/template-method">Refactoring.guru's Template Method</a>
+</p><p>
+
+
+<strong>Go4 description:</strong> Define the skeleton of an algorithm in an operation, deferring some
+	steps to subclasses. Template Method lets subclasses redefine
+	certain steps of an algorithm without changing the algorithm's
+	structure.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/images/Template-Method.PDF"><strong>Generic diagram</strong></a>
+
+</p><ul>
+  <li>Template method is needed if subclasses have methods that are similar (violating DRY) but also have different bits so it cannot be directly lifted to superclass.
+  </li><li>The template is an algorithm with code in the superclass but
+  which has "holes" (steps not yet known at the superclass level) in it.
+  </li><li>The subclasses implement the "holes"
+  </li><li>The steps in the algorithm common to all implementations
+  can be in the superclass  (notice how this avoids code duplication)
+  </li><li>the subclasses provide the missing bits by instantiating some
+  methods that were abstract in the superclass.
+  </li><li><a href="https://pl.cs.jhu.edu/oose/lectures/images/Template-Method-Example.PDF">Example code</a> for
+  coffee or tea brewing; <a href="https://pl.cs.jhu.edu/oose/lectures/images/Template-Method-Example-Diagram.PDF">diagram</a> of
+  this example
+    </li><li>See also the <a href="https://refactoring.guru/form-template-method">Form Template Method refactoring</a>
+</li></ul>
+<h4>Design principle: the hollywood principle</h4>
+<blockquote>Don't call us, we'll call you 
+</blockquote>
+Translation: 
+<ul>
+  <li>Context: a high-level component is talking to a low-level component. 
+  </li><li>It is the high-level component that is in control of the process
+  </li><li>High-level component has a (general) interface for invoking
+      low-level component
+  </li><li>Low-level component services the high-level component via the calls
+  </li><li>The reason to do this is to put some order to the madness: limit circular/tangled dependencies
+</li></ul>
+Template  method uses this pattern:
+<ul>
+  <li>The superclass with the template in it is the high-level component
+  </li><li>The subclasses are the low-level components
+  </li><li>The super is in control and calls the subclasses
+  </li><li>The subclasses <em>don't</em> call the super.
+</li></ul>
+
+
+<h3>Iterator</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/iterator">Refactoring.guru's Iterator</a>
+</p><p>
+
+<strong>Go4 description:</strong> Provide a way to access the elements of an aggregate object
+	sequentially without exposing its underlying representation.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/images/Iterator.PDF"><strong>Generic diagram</strong></a>
+</p><ul>
+  <li>You know this one well: the Java collections all implement an <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html">Iterator</a>
+  interface.
+  </li><li>Key benefit: it hides the underling kind of collection since its irrelevant to users just iterating over it.
+  </li><li>Iterators need to hold the state of progress of one iteration
+  through the object, so you make a new one of these guys for each
+  iteration through the collection.
+  </li><li>The take-home message here is you can implement <code>Iterator</code> on your own
+    classes which you may need to iterate through
+    <br> -- e.g. a <code>TreeIterator</code> which does a depth-first walk
+    <br> -- you can also add <code>jumpAheadTo()</code>, <code>reset()</code>, etc behavior needed for your domain, etc.
+</li></ul>
+
+
+
+<h3>Composite</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/composite">Refactoring.guru's Composite</a>
+</p><p>
+<strong>Go4 description:</strong> Compose objects into tree structures to represent part-whole
+	hierarchies. Composite lets clients treat individual objects
+	and compositions of objects uniformly.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/images/Composite.PDF"><strong>Generic diagram</strong></a>
+
+</p><ul>
+  <li>If you needed a recursive union type in C, use the composite pattern in an
+      OO language -- Composite is important!
+  </li><li><strong>HFDPS Example:</strong> <a href="https://pl.cs.jhu.edu/oose/lectures/images/CompositeExampleGoal.PDF">restaurant menus with submenus</a> and the <a href="https://pl.cs.jhu.edu/oose/lectures/images/CompositeExample.PDF">solution</a> using a Composite
+      <ul>
+	<li>The key advantage of this pattern is how <code>print()</code> can be implemented: an individual item just prints itself, and the composite prints all of its components.
+	</li><li>Notice how the common superclass <code>MenuComponent</code> has all the methods of an individual <code>MenuItem</code> as well as of a composite <code>Menu</code>.  This violates LSP (and because of that lots of <code>UnsupportedOperationException</code>s must be raised in e.g. <code>MenuItem</code>'s <code>add()</code> and <code>Menu</code>'s <code>isVegetarian</code>) but is needed for the useful uniformity.
+      </li></ul>
+  </li><li><strong>Java Swing UI example</strong> (also found in other nested window systems): <a href="https://pl.cs.jhu.edu/oose/lectures/images/Swing-Composite.jpg"><code>Component/Container</code></a>. 
+      <ul>
+	<li>Swing implements a variation on Composite: <code>JComponent</code> is a subclass
+  of <code>Container</code>, and so <code>JComponent</code> and all
+  its subclasses (i.e., all swing widgets) are themselves
+  containers.
+	</li><li><code>paint()</code> in a <code>JComponent</code>
+  container first paints the component (<code>paintComponent()</code>) and then all of its children,
+  if any (<code>paintChildren()</code>).
+      </li></ul>
+</li></ul>
+
+<h3>State</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/state">Refactoring.guru's State</a>
+</p><p>
+
+<strong>Go4 description:</strong> Allow an object to alter its behaviour when its internal state
+	changes. The object will appear to change its class.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/images/State.pdf"><strong>Generic diagram</strong></a>
+</p><ul>
+  <li>Book example is a gumball machine 
+    <ul>
+      <li>The actions of inserting a coin, turning crank, etc vary
+	depending on the state of the machine (coin previously
+	inserted etc)
+      <br>(aside: behind every state pattern is a finite-state automaton)
+      </li><li>The <a href="https://pl.cs.jhu.edu/oose/lectures/images/StateExampleBad.PDF">smelly way to do it</a> -- a bunch of
+	<code>switch</code> or <code>if-then-else</code> statements.
+      </li><li>better way to do it: <a href="https://pl.cs.jhu.edu/oose/lectures/images/StateExampleGood.PDF">with the state pattern</a>!
+	<a href="https://pl.cs.jhu.edu/oose/lectures/images/StateExampleGoodCode.PDF">here is the main
+	class code</a> and <a href="https://pl.cs.jhu.edu/oose/lectures/images/StateExampleGoodCode2.PDF">here are some state classes</a>.
+	</li><li>This is an example of the Replace Type Code with State/Strategy refactoring
+      </li><li>Observe the delegation here, the state-dependent methods now are forwarded to the <code>State</code>-ful object.
+    </li></ul>
+  </li><li>Another Example: in Fowler <em>Refactoring</em> Chapter 1, the state pattern
+was used for movies because their classification could dynamically
+change (a new class <code>Price</code> was introduced which is the
+<code>State</code> above, and it had subclasses
+<code>RegularPrice</code>, etc; <code>Movie</code> is the
+<code>Context</code> above, holding the <code>Price</code> state: <a href="https://pl.cs.jhu.edu/oose/lectures/images/MoviePriceRefactored.PDF">See this Figure</a>).
+  </li><li><strong>State</strong> is great: the underlying states of the
+	design now have clear reifications as class names.
+</li></ul>
+
+<h3>Strategy</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/strategy">Refactoring.guru's Strategy</a>
+</p><p>
+
+<strong>Go4 description:</strong> Define a family of algorithms, encapsulate each one, and make them
+	interchangeable. Strategy lets the algorithm vary independently
+	from clients that use it.
+</p><ul>
+  <li>This is very similar to <strong>State</strong>, it supports dynamic
+      changing of some aspects of a class--in this case an algorithm.
+  </li><li>The class diagram is identical as well.
+</li></ul>
+
+
+<h3>Singleton</h3>
+<p>
+  <a href="https://refactoring.guru/design-patterns/singleton">Refactoring.guru's Singleton</a>
+</p><p>
+
+<strong>Go4 description:</strong> Ensure a class has only one instance and provide a global point of
+	access to it.
+<br><a href="https://pl.cs.jhu.edu/oose/lectures/PatternDiagrams/pattern-singleton.gif"><strong>Generic diagram</strong></a>
+
+</p><ul>
+  <li>For a class with only one member, something quite common in practice. 
+  </li><li>Code it so that multiple instances <em>can't</em> be created.  
+  </li><li>Have a class method to get the sole instance.  <a href="https://pl.cs.jhu.edu/oose/lectures/images/EJ2-Singleton.PDF">Java version (from Bloch's book)</a>.
+</li></ul>
+<strong>Question:</strong> why not just use static methods and create no instances?<br>
+<strong>Answer:</strong>
+<ul>
+  <li>Static methods are directly globally visible,
+      violating encapsulation boundaries.
+  </li><li>You can't pass classes as arguments, but you <em>can</em> pass objects (note some languages do allow classes to be passed)
+  </li><li>There is no object polymorphism with classes - <tt>ClockFace f</tt> where <tt>ClockFace</tt> is an interface means <tt>f</tt> at run-time could be e.g. a <tt>DigitalClockFace</tt> or <tt>AnalogClockFace</tt> object
+  </li><li>This will not be extensible if for some reason two (or more) are needed.  
+</li></ul>
+
+
+
+  <h2>Architectural patterns</h2>
+<p> </p><ul>
+    <li>Architectural patterns are patterns of system architecture, used by frameworks</li>
+    <li>They are at a larger scale than design patterns and may not be involving objects alone
+      </li></ul>
+
+  <h3>Model - View - Controller (MVC)</h3>
+<p>This is a classic architectural pattern encouraging separation of concerns.
+</p><ul>
+  <li>MVC means factor out the front-end View (output) and the Controller (input) into separate components (often classes).</li>
+  <li>Whats left is the <em>Model</em>, the code only doing the actual underlying logic of the app.</li>
+  <li>Originally applied to GUI apps, e.g. Smalltalk UI's, Java Swing and JavaFX, Android Activities.</li>
+  <li>More recently extended to web-based apps with some (or a lot of) abuse of the original terminology.</li>
+</ul>
+
+Picture from Wikipedia:<p>
+<img src="./Object-Oriented Software Engineering_files/MVC-Process.svg" width="300">
+
+</p><h4>MVC and Observer</h4>
+  <ul>
+    <li>Views can register as Observers of model, ready to update on any change to underlying model</li>
+    <li>Multiple views can be observing the same model - fits nicely into Observer pattern</li>
+    <li>Controller is also an observer of the global event queue
+  </li></ul>
+
+
+      <h3> MVC and modern web architectures</h3>
+  <p>Web (and other RESTful) apps have a related architecture pattern, usually called a <em>three-tier architecture</em>
+    </p><ul><li>V and C is top tier, model is middle, and at bottom is the persistence layer, the connection to the database.</li>
+  <li>Example from the Todo app:<ul>
+      <li><code>Todo</code> is the model (its very simple; for e.g. your Lights out game you should have had several core classes for the underlying game such as <code>Board</code>, etc.); 
+</li><li><code>TodoController</code> is the controller which is the interface for receiving inputs;
+  </li><li>The view is all on the front-end so there is no view in the Java code; 
+    </li><li><code>TodoService</code> implements all the persistence operations - don't mix this into model or controller.
+    </li></ul>
+  </li></ul>
+  
+
+
+
+      <h3>MVC and the Active record pattern in Rails and Django</h3>
+      <p> Rails claims to have an MVC architecture but its different in several ways from the classic one.
+      </p><ul>
+	<li>(Rails is the RESTful server technology stack for Ruby; Django is similar)
+	</li><li>Model objects persisted in the database by the framework (via the <em><a href="https://en.wikipedia.org/wiki/Active_record_pattern">active record architecture pattern</a></em>)
+	<ul>
+	  <li>model objects can e.g. <tt>save()</tt> themselves to the database, framework does it all -- <em>automatic</em> Object-relational mapping (ORM)
+	    </li><li>To Do app is manually mapping objects to database -- <em>manual</em> ORM.
+	  </li></ul></li>
+	</ul></li>
+	<li>View (html) is just an html template, its not really an active object getting data from model, etc.</li>
+	<li>View should only <em>read</em> from the model; it will invoke controller (RESTful) actions to write.
+      
+
+      <h5><a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> (Model - View - ViewModel)</h5>
+      <ul>
+	<li>This is a modern variation on MVC which exists in the front-end of some web frameworks (e.g. Angular 1)</li>
+	<li>The <tt>ViewModel</tt> is an adapter (see below) - it is converting data in the model into a form the view can digest it.
+	  </li></ul>
+
+
+
+<h3>Component-based Architecture (Angular 2 and React)</h3>
+<ul>
+  <li>This is a relatively novel architectural pattern for front-end development; see e.g. <a href="https://medium.com/@dan.shapiro1210/understanding-component-based-architecture-3ff48ec0c238">this tutorial</a>
+  </li><li>Rather than designing a monolithic view for a whole page, views can be composed of multuple component views which the framework automatically stitches together</li>
+  <li>In each component you can also separate out the html, css, and js just for that component, which the framework will also compose for you to give the html/css/js for the whole page view.</li>
+  <li>The net effect is you have more "objects" of these html/css/js which can compose like normal objects do.
+    </li></ul>
+
+
+  
+<h2>More Gang of Four Patterns</h2>
+The patterns from here on down are relatively infrequiently used and we are not going to cover them or ask you to learn them.  They
+are summarized in Chaper 14 of the HFDPs book.
+<h3>Bridge</h3>
+HFDPs p.612<p>
+
+<strong>Go4 description:</strong> Decouple an abstraction from its implementation so that the two can
+	vary independently.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-bridge.gif"></p><p>
+<strong>Bridge</strong> is an apt name, because it forms a bridge
+between two inheritance heirarchies.</p><p>
+
+
+<strong>Bridge</strong> emerges as a result of a refactoring
+      which introduces delegation:
+</p><ul>
+  <li>Suppose you have a complex inheritance tree (example:
+      <code>Window</code> with subclasses
+      <code>IconWindow</code>, <code>Dialog</code>, etc)
+  </li><li>Suppose there are also different modalities of
+      implementation of the whole tree, for example PC, UNIX, and
+      Mac-specialized implementations are needed.
+  </li><li>Refactor this mess into two trees, an
+      <em>abstraction</em> hierarchy which is the original
+      <code>Window</code>/<code>IconWindow</code>/<code>Dialog</code> tree 
+      with the PC/Mac/UNIX implementation bits removed, and an
+      implementation tree which has an abstract
+      <code>Implementation</code> class and each concrete
+      <code>ImplementationMac</code>,  <code>ImplementationPC</code>,
+       <code>ImplementationUNIX</code> as subclasses.
+  </li><li>The abstract tree then delegates to its implementation
+      object for the low-level code.
+</li></ul>
+
+
+<h3>Builder</h3>
+HFDPs p.614<p>
+<strong>Go4 description:</strong> Separate the construction of a complex object from its representation
+	so that the same construction process can create different
+	representations.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-builder.gif">
+</p><ul>
+  <li>the <code>Director</code> needs to create many different kinds
+      of parts to make the full product.  In the stupid method, the
+      director has a whole pile of different classes he has to <code>new</code>.
+  </li><li>In the smart method above, he has a uniform pile (an
+      <code>Array</code> say) of <code>Builder</code>'s, and by
+      invoking <code>BuildPart()</code> on each one in a loop, he
+      gets all his parts made with minimal code fuss.
+  </li><li>the <code>ConcreteBuilder</code> is a particular concrete
+      <code>Builder</code>, a factory class, designed to create
+      <code>Product</code>'s.
+</li></ul>
+
+
+
+<h3>Chain of Responsibility</h3>
+HFDPs p.616<p>
+<strong>Go4 description:</strong> Avoid coupling the sender of a request to its receiver by giving
+	more than one object a chance to handle a request. Chain the
+	receiving objects and pass the request along the chain until an
+	object handles it.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-chainofresponse.gif">
+</p><ul>
+  <li>This pattern shares some structural similarities with
+      Java exceptions: either they are handled or passed on.  But with
+      exceptions they are implicitly passed on if they are not
+      handled; here the passing on is explicit
+  </li><li>This pattern is useful for hierarchical structures where a
+      request can be handled at multiple layers.  
+  </li><li>Example: GUI event handling can be done hierarchically.  If
+      a contained view doesn't want to handle an event it can delegate
+      it to its container, etc up the chain to the window.  Java
+      doesn't use this event model however.
+</li></ul>
+
+
+<h3>Flyweight</h3>
+HFDPs p.618<p>
+<strong>Go4 description:</strong> Use sharing to support large numbers of fine-grained objects
+	efficiently.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-flyweight.gif">
+</p><ul>
+  <li>This is a more specialized pattern, not used as often as the others.
+  </li><li><strong>Example:</strong> Suppose a card game required 50 decks
+      of cards.  Only one set of actual cards need be created and shared
+</li></ul>
+
+<h3>Interpreter</h3>
+HFDPs p. 620<p>
+<strong>Go4 description:</strong> Given a language, define a representation for its grammar along
+	with an interpreter that uses the representation to interpret
+	sentences in the language.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-interpreter.gif">
+</p><ul>
+  <li>This is a very specific pattern to represent language syntax.
+  </li><li>It is a variation on <code>Composite</code>.  In general it is
+      also like <code>Composite</code> showing how <code>union</code>
+      types are encoded via this recursive diagram structure.
+</li></ul>
+
+
+<h3>Mediator</h3>
+HFDPs p. 622
+Put someone in charge (a <em>mediator</em>) of an interaction between
+  two classes.
+<p>
+
+<strong>Go4 description:</strong> Define an object that encapsulates how a set of objects
+	interact. Mediator promotes loose coupling by keeping objects
+	from referring to each other explicitly, and it lets one vary
+	their interaction independently.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-mediator.gif">
+
+</p><h3>Memento</h3>
+HFDPs p. 624<p>
+<strong>Go4 description:</strong> Without violating encapsulation, capture and externalise an object's
+	internal state so that the object can be restored to this
+	state later.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-memento.gif">
+</p><ul>
+  <li>This pattern can be one useful way to interact with a database
+      in an object-oriented fashion: keep mementos around of all objects
+</li></ul>
+
+
+<h3>Prototype</h3>
+HFDPs p. 626<p>
+<strong>Go4 description:</strong> Specify the kinds of objects to create using a prototypic instance
+	and create new objects by copying this prototype.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-prototype.gif">
+
+</p><ul>
+  <li>When you want new objects, <em>copy</em> from a
+prototype instead of creating directly from a class.
+  </li><li>
+Useful when its a significant effort to create object structure from scratch.
+  </li><li>
+<strong>Example:</strong>
+To create a new <code>Deck</code> of 52 playing cards, cards could be copied from
+a static variable in <code>Deck</code> which was originally
+  initialized  when the class was loaded to hold a "fresh" <code>Deck</code> of <code>Card</code>
+  objects rather than making cards all over again.
+</li></ul>
+
+<h3>Visitor</h3>
+HFDPs p. 628; also see <a href="http://userpages.umbc.edu/~tarr/dp/spr06/cs446.html">Bob Tarr's slides</a><p>
+
+<strong>Go4 description:</strong>
+Represent an operation to be performed on the elements of an object
+	structure. Visitor allows one to define a new operation without
+	changing the classes of the elements on which it operates.
+<br><strong>Go4 Diagram:</strong></p><p><img src="./Object-Oriented Software Engineering_files/pattern-visitor.gif">
+</p><ul>
+  <li>Suppose you have an <code>Element</code> object in a variable
+      and need to perform a <code>switch</code> on what concrete
+      subclass of <code>Element</code> we in fact have.
+  </li><li>Note that this is an <em>incredibly</em> common C programming
+      pattern on  <code>union</code> types -- you are casing on which
+      branch of the union you are in (the C analogy of inheritence is union).
+  </li><li>The problem is this notion does not fit well with O-O, the union
+      is treated as <em>passive</em> in this switch; you are also
+      casing at run-time on what class an object is, a brittle
+      programming pattern.
+  </li><li>Alternative 1: add a method to each class in the union to do the walkthrough
+      <ul>
+	<li>Big Advantage: we kept things highly O-O!
+	</li><li>Big Disadvantage: this is shotgun surgery -- each time we
+	    want to do such a switch we have to add a method to all
+	    the classes in the tree. Code gets all spread out.
+      </li></ul>
+  </li><li>Alternative 2: <strong>Visitor</strong>
+      <ul>
+	<li>Add an intermediary class, the <em>visitor</em>, which
+	    holds all the cases
+	</li><li>The classes in the original inheritance hierarchy gets a new method
+	    <code>Accept</code> to help "walk"
+	    the visitor through the union
+	</li><li>... this is a compromise, we are not completely violating
+	    O-O and we avoid shotgun surgery when adding an operation
+	    over the tree, but it adds complexity to the design.
+	</li><li>Note that if we add a new concrete element type we on the
+	    other hand have to do surgery on all visitors.
+	    But, we have localized the surgery to just the visitors.
+      </li></ul>
+  </li><li> This pattern is another pattern that is useful to get rid of switch statements.
+</li></ul>
+How the <strong>Visitor</strong> works:
+<ul>
+  <li>Abstract superclass <em><code>Visitor</code></em> is the
+      superclass of all visitors
+  </li><li><code>ConcreteVisitor1</code> is a concrete visitor
+      (e.g. we make a class <code>GetHealthRating</code>for
+      <code>getHealthRating()</code> in the menu example); we make new
+      <code>ConcreteVisitorX</code> for each different switch we wanted
+      to do over the union.
+  </li><li><code>ConcreteVisitor1</code> has a method
+      <code>visitConcreteElementA</code> etc for each kind of node
+      A/B/.. in the original union structure - this is where the code
+      in the original switch for the case it is <code>A</code>/<code>B</code>.. goes.
+  </li><li><code>anElement.accept(aVisitor)</code> starts the visiting process
+</li><li>This method in each inheritence class
+    <code>ConcreteElementA</code> etc in turn calls the correct "case"
+    to be performed on it, e.g. <code>ConcreteElementA</code> calls
+    <code>visitConcreteElementA(this)</code> which will run the
+    correct case of the switch..
+      </li></ul>
+The place where <strong>Visitor</strong> really shines is using it
+      together with <strong>Composite</strong> to visit a tree structure.
+
+
+
+
+  
+  
+          </li></section>
+        </div>
+      </div>
+
+
+      
+				<div id="copyright">
+					Web Design: <a href="http://templated.co/">TEMPLATED</a> Images: <a href="http://unsplash.com/">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+				</div>			
+
+
+   
+
+	 
+
+
+  
+<ul class="menu dropotron level-0" style="user-select: none; display: none; position: absolute; z-index: 1000;">
+           <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/dateline.shtml" style="display: block;">Dateline</a></li>
+           <li style="white-space: nowrap;"><a href="https://gradescope.com/" style="display: block;">Gradescope</a></li>
+           <li style="white-space: nowrap;"><a href="https://piazza.com/class/jkjy7yzgor0eo" style="display: block;">Piazza</a></li>
+           <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/integrity.shtml" style="display: block;">Integrity</a></li>
+           <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/contact.shtml" style="display: block;">Contact Us</a></li>
+          </ul><ul class="menu dropotron level-0" style="user-select: none; display: none; position: absolute; z-index: 1000;">
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/webjava.shtml" style="display: block;">RESTful Web</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/uml.shtml" style="display: block;">UML</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/git.shtml" style="display: block;">Git</a>
+</li><li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/requirements.shtml" style="display: block;">Requirements</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/javascript.shtml" style="display: block;">JavaScript</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/design.shtml" style="display: block;">Design</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/design-principles.shtml" style="display: block;">Design Principles</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/implement-test.shtml" style="display: block;">Implementation</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/refactoring.shtml" style="display: block;">Refactoring</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/code-idioms.shtml" style="display: block;">Code Idioms</a></li>
+<li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/lectures/design-patterns.shtml" style="display: block;">Design Patterns</a></li>
+</ul><ul class="menu dropotron level-0" style="user-select: none; display: none; position: absolute; z-index: 1000;">
+      <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/projects/iteration1.shtml" style="display: block;">Iteration 1</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration2.shtml" style="display: block;">Iteration 2</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration3.shtml" style="display: block;">Iteration 3</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration4.shtml" style="display: block;">Iteration 4</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration5.shtml" style="display: block;">Iteration 5</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/projects/iteration6.shtml" style="display: block;">Iteration 6</a></li>
+      <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/projects/presentations.shtml" style="display: block;">Presentations</a>
+
+    </li></ul><ul class="menu dropotron level-0 right" style="user-select: none; display: none; position: absolute; z-index: 1000; left: 581.007px; top: 59px; opacity: 1;">
+      <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/assignments/restful.shtml" style="display: block;">1:RESTful server</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/javascript.shtml" style="display: block;">2:JavaScript etc</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/design.shtml" style="display: block;">3:Design</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/design-principles.shtml" style="display: block;">4:Design Principles</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/refactoring.shtml" style="display: block;">5:Refactoring</a></li>
+      <li style="white-space: nowrap;"> <a href="https://pl.cs.jhu.edu/oose/assignments/design-patterns.shtml" style="display: block;">6:Design Patterns</a></li>
+    </ul><ul class="menu dropotron level-0" style="user-select: none; display: none; position: absolute; z-index: 1000;">
+      <li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/resources/tools.shtml" style="display: block;">Tools</a>
+      </li><li style="white-space: nowrap;"><a href="https://pl.cs.jhu.edu/oose/resources/textbooks.shtml" style="display: block;">Books</a>
+      </li></ul></div><div id="skel-layers-inactiveWrapper" style="height: 100%;"></div><div id="skel-layers-activeWrapper" style="position: relative;"></div></body><div style="all: initial;"><div></div></div></html>
